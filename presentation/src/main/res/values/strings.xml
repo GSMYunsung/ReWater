@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">presentation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_tree">나무의 종류를 골라주세요</string>
+    <string name="choose_tree_size">나무의 크기를 골라주세요</string>
+    <string name="Ginkgo_tree">은행나무</string>
+    <string name="cherry_tree">벚나무</string>
+    <string name="kind_of_oak_tree">참나무</string>
+    <string name="maple_tree">단풍나무</string>
+    <string name="zelkova_tree">느티나무</string>
+    <string name="pine_tree">소나무</string>
+    <string name="cypress_tree">편백나무</string>
+    <string name="oak_tree">상수리나무</string>
+    <string name="camellia_tree">동백나무</string>
+    <string name="etc_tree">기타</string>
+</resources>
