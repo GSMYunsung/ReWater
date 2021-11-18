@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainFunFragment">
+
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="com.kdn.presentation.ui.main.fragment.AlarmFragment"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
+    <fragment
+        android:id="@+id/outputDateFragment"
+        android:name="com.kdn.presentation.ui.main.fragment.OutputDateFragment"
+        android:label="fragment_output_date"
+        tools:layout="@layout/fragment_output_date" />
+    <fragment
+        android:id="@+id/mainFunFragment"
+        android:name="com.kdn.presentation.ui.main.fragment.MainFunFragment"
+        android:label="fragment_main_fun"
+        tools:layout="@layout/fragment_main_fun" >
+        <action
+            android:id="@+id/action_mainFunFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment" />
+        <action
+            android:id="@+id/action_mainFunFragment_to_outputDateFragment"
+            app:destination="@id/outputDateFragment" />
+        <action
+            android:id="@+id/action_mainFunFragment_to_setTimeAndOutputFragment"
+            app:destination="@id/setTimeAndOutputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setTimeAndOutputFragment"
+        android:name="com.kdn.presentation.ui.main.fragment.SetTimeAndOutputFragment"
+        android:label="fragment_set_time_and_output"
+        tools:layout="@layout/fragment_set_time_and_output" />
+</navigation>
