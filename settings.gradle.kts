@@ -9,5 +9,5 @@ dependencyResolutionManagement {
 
 rootProject.name="Re_Water"
 include(":presentation")
-include(":module")
+include(":domain")
 include(":data")
