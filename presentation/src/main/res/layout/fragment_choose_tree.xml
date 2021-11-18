@@ -1,223 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ui.setting.fragment.ChooseTreeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:src="@drawable/title_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/title_light"
-        android:text="@string/choose_tree"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <variable
+            name="fragment"
+            type="com.kdn.presentation.ui.setting.fragment.ChooseTreeFragment" />
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.107">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ui.setting.fragment.ChooseTreeFragment">
 
-        <TextView
-            android:id="@+id/ginkgo_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/Ginkgo_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/title_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/cherry_textView"
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/tree_button_background"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/cherry_tree"
+            android:text="@string/choose_tree"
             android:textColor="@color/black"
-            android:textSize="23dp"
+            android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ginkgo_textView"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/next_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            app:layout_constraintVertical_bias="0.060000002">
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/ginkgo_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/Ginkgo_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/maple_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/maple_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ginkgo_textView" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/kind_of_oak_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/kind_of_oak_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:id="@+id/zelkova_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/zelkova_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/maple_textView" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/pine_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/pine_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/kind_of_oak_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/kind_of_oak_textView" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:id="@+id/cypress_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/cypress_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/zelkova_textView" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:id="@+id/oak_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/oak_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.737"
+                    app:layout_constraintStart_toEndOf="@+id/cypress_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/pine_textView" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:id="@+id/etc_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/etc_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintHorizontal_bias="0.898"
+                    app:layout_constraintStart_toEndOf="@+id/camellia_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/oak_textView" />
+
+                <RadioButton
+                    android:onClick="@{fragment.isButtonTrue}"
+                    android:id="@+id/camellia_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radio_is_check"
+                    android:button="@null"
+                    android:fontFamily="@font/title_light"
+                    android:padding="5dp"
+                    android:text="@string/camellia_tree"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cypress_textView" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tree"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/maple_textView"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/next_button"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/maple_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ginkgo_textView" />
-
-
-        <TextView
-            android:id="@+id/kind_of_oak_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/kind_of_oak_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
+            android:onClick="@{fragment.onClick}"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/next_button_background"
+            android:fontFamily="@font/title_medium"
+            android:text="다음"
+            android:textColor="@color/button_not_select"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/cherry_textView"
-            app:layout_constraintTop_toBottomOf="@+id/cherry_textView" />
+            app:layout_constraintHorizontal_bias="0.674"
+            app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
-        <TextView
-            android:id="@+id/zelkova_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/zelkova_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/maple_textView" />
-
-        <TextView
-            android:id="@+id/pine_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/pine_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/kind_of_oak_textView"
-            app:layout_constraintTop_toBottomOf="@+id/kind_of_oak_textView" />
-
-        <TextView
-            android:id="@+id/cypress_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/cypress_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zelkova_textView" />
-
-        <TextView
-            android:id="@+id/oak_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/oak_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.737"
-            app:layout_constraintStart_toEndOf="@+id/cypress_textView"
-            app:layout_constraintTop_toBottomOf="@+id/pine_textView" />
-
-        <TextView
-            android:id="@+id/etc_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/etc_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintEnd_toEndOf="@+id/cherry_textView"
-            app:layout_constraintHorizontal_bias="0.898"
-            app:layout_constraintStart_toEndOf="@+id/camellia_textView"
-            app:layout_constraintTop_toBottomOf="@+id/oak_textView" />
-
-        <TextView
-            android:id="@+id/camellia_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/tree_button_background"
-            android:fontFamily="@font/title_light"
-            android:padding="5dp"
-            android:text="@string/camellia_tree"
-            android:textColor="@color/black"
-            android:textSize="23dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cypress_textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/tree"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:fontFamily="@font/title_light"
-        android:layout_width="200dp"
-        android:textSize="18dp"
-        android:textColor="@color/black"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/next_button_background"
-        android:text="다음"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.674"
-        app:layout_constraintStart_toEndOf="@+id/imageView2" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

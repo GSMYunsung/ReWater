@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.setting.activity.SettingActivity">
 
+    <fragment
+        android:id="@+id/nav_find_password"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/choose_nav"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

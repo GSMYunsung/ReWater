@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<layout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.kdn.presentation.ui.setting.fragment.ChooseTreeSizeFragment" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.setting.fragment.ChooseTreeSizeFragment">
@@ -42,64 +54,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="100dp"
+    <RadioGroup
+        android:id="@+id/treeSize_radioGroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/tree_button_background"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="소"
-        android:textColor="@color/black"
-        android:textSize="25dp"
+        android:layout_marginTop="204dp"
+        app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/tree_button_background"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="중"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <RadioButton
+            android:onClick="@{fragment.isButtonTrue}"
+            android:id="@+id/s_size_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_is_check"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="소"
+            android:textColor="@color/black"
+            android:textSize="25dp"/>
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/tree_button_background"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="대"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <RadioButton
+            android:onClick="@{fragment.isButtonTrue}"
+            android:id="@+id/m_size_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/radio_is_check"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="중"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+        <RadioButton
+            android:onClick="@{fragment.isButtonTrue}"
+            android:id="@+id/b_size_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/radio_is_check"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="대"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+    </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:onClick="@{fragment.onClick}"
+        android:id="@+id/next_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
         android:background="@drawable/next_button_background"
-        android:fontFamily="@font/title_light"
+        android:fontFamily="@font/title_medium"
         android:text="다음"
-        android:textColor="@color/black"
+        android:textColor="@color/button_not_select"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
