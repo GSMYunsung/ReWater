@@ -6,25 +6,29 @@
         <entry key="presentation/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.35185185185185186" />
         <entry key="presentation/src/main/res/drawable/ic_launcher_background.xml" value="0.33013698630136984" />
         <entry key="presentation/src/main/res/drawable/next_button_background.xml" value="0.35185185185185186" />
+        <entry key="presentation/src/main/res/drawable/radio_is_check.xml" value="0.23550488599348535" />
+        <entry key="presentation/src/main/res/drawable/toast_back.xml" value="0.23550488599348535" />
         <entry key="presentation/src/main/res/drawable/tree_button_background.xml" value="0.3592592592592593" />
-        <entry key="presentation/src/main/res/layout/activity_main.xml" value="0.3548717948717949" />
-        <entry key="presentation/src/main/res/layout/activity_main_fun.xml" value="0.3416666666666667" />
-        <entry key="presentation/src/main/res/layout/activity_setting.xml" value="0.3416666666666667" />
+        <entry key="presentation/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="presentation/src/main/res/layout/activity_main_fun.xml" value="0.25" />
+        <entry key="presentation/src/main/res/layout/activity_setting.xml" value="0.165" />
+        <entry key="presentation/src/main/res/layout/alaram_item.xml" value="0.3548717948717949" />
         <entry key="presentation/src/main/res/layout/fragment_alarm.xml" value="0.3416666666666667" />
-        <entry key="presentation/src/main/res/layout/fragment_choose_tree.xml" value="0.165" />
+        <entry key="presentation/src/main/res/layout/fragment_choose_tree.xml" value="0.25" />
         <entry key="presentation/src/main/res/layout/fragment_choose_tree_end.xml" value="0.165" />
-        <entry key="presentation/src/main/res/layout/fragment_choose_tree_size.xml" value="0.25" />
+        <entry key="presentation/src/main/res/layout/fragment_choose_tree_size.xml" value="0.165" />
         <entry key="presentation/src/main/res/layout/fragment_choose_tree_size_end.xml" value="0.25" />
         <entry key="presentation/src/main/res/layout/fragment_choose_tree_sizw.xml" value="0.34102564102564104" />
         <entry key="presentation/src/main/res/layout/fragment_main_f_un.xml" value="0.3416666666666667" />
         <entry key="presentation/src/main/res/layout/fragment_main_fun.xml" value="0.165" />
         <entry key="presentation/src/main/res/layout/fragment_output_date.xml" value="0.25" />
-        <entry key="presentation/src/main/res/layout/fragment_set_time_and_output.xml" value="0.25" />
+        <entry key="presentation/src/main/res/layout/fragment_set_time_and_output.xml" value="0.165" />
         <entry key="presentation/src/main/res/layout/splash.xml" value="0.3548717948717949" />
+        <entry key="presentation/src/main/res/layout/toast_item.xml" value="0.2254071661237785" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
