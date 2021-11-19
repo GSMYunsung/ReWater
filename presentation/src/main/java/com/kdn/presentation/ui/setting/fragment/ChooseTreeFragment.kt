@@ -17,6 +17,7 @@ import com.kdn.presentation.ui.setting.toast.ToastView
 import com.kdn.presentation.ui.setting.viewmodel.SettingViewmodel
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ChooseTreeFragment : Fragment() {
     private val viewModel by activityViewModels<SettingViewmodel>()
     private lateinit var binding : FragmentChooseTreeBinding
