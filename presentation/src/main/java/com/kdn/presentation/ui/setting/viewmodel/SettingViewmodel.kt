@@ -4,11 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kdn.presentation.R
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class SettingViewmodel : ViewModel() {
+@HiltViewModel
+class SettingViewmodel @Inject constructor(
+) : ViewModel() {
 
     private val _isChecked = MutableLiveData<Boolean>()
     val isChecked : LiveData<Boolean> get() = _isChecked
+
+    private val _plantEntity = MutableLiveData<Map<String,String>>()
+    val plantEntity : LiveData<Map<String,String>> get() = _plantEntity
 
     private val _selectTreeText = MutableLiveData<String>()
     val selectTreeText : LiveData<String> get() = _selectTreeText
@@ -29,6 +36,7 @@ class SettingViewmodel : ViewModel() {
             R.id.cypress_textView -> _selectTreeText.value = "편백나무"
         }
     }
+
 
     fun getTreeSizeTextId(id : Int){
         when(id){
