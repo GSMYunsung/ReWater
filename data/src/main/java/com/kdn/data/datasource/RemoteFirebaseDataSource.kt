@@ -12,5 +12,5 @@ class RemoteFirebaseDataSource @Inject constructor(
     private val firebaseStorage : FirebaseStorage,
     private val fireStore : FirebaseFirestore
 ) {
-    fun getPlantStateInfo() = firebaseRtdb.reference.child("AppData")
+    fun getPlantStateInfo() = firebaseRtdb.reference
 }
