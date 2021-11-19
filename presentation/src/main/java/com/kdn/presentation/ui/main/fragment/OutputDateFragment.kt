@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kdn.presentation.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OutputDateFragment : Fragment() {
 
     override fun onCreateView(
@@ -14,6 +16,8 @@ class OutputDateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+
         return inflater.inflate(R.layout.fragment_output_date, container, false)
     }
 }
