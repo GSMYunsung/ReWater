@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -28,24 +29,73 @@ class MainFunFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        basicSetting()
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_fun,container,false)
+
+        updateSetting()
 
         return binding.root
     }
 
-    fun basicSetting(){
-        viewModel.getPlantStateInfo().addListenerForSingleValueEvent(
-            object : ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val data : SaveDataClass = snapshot.getValue(SaveDataClass.class)
+    fun updateSetting(){
+        viewModel.getPlantStateInfo().addChildEventListener(
+            object : ChildEventListener{
+                override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+
+                    val data : SaveDataClass? = snapshot.getValue(SaveDataClass::class.java)
+
+                        binding.values =SaveDataClass(
+                            data!!.Ieast_temperature
+                            ,data!!.alarm_o_clock
+                            ,data!!.alram_minutes
+                            ,data!!.battery
+                            ,data!!.current_humidity
+                            ,data!!.desired_humidity
+                            ,data!!.if_output
+                            ,data!!.maximum_temperature
+                            ,data!!.output
+                            ,data!!.output_time
+                            ,data!!.size
+                            ,data!!.tree
+                            ,data!!.volume
+                        )
+                }
+
+                override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+
+                    val data : SaveDataClass? = snapshot.getValue(SaveDataClass::class.java)
+
+                    Log.d("change!",data.toString())
+
+                    binding.values =SaveDataClass(
+                        data!!.Ieast_temperature
+                        ,data!!.alarm_o_clock
+                        ,data!!.alram_minutes
+                        ,data!!.battery
+                        ,data!!.current_humidity
+                        ,data!!.desired_humidity
+                        ,data!!.if_output
+                        ,data!!.maximum_temperature
+                        ,data!!.output
+                        ,data!!.output_time
+                        ,data!!.size
+                        ,data!!.tree
+                        ,data!!.volume
+                    )
 
 
                 }
 
+                override fun onChildRemoved(snapshot: DataSnapshot) {
+                    //값이 삭제될때?
+                }
+
+                override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+
+                }
+
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+
                 }
 
             }
