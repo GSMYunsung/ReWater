@@ -8,15 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.kdn.presentation.R
 import com.kdn.presentation.SaveDataClass
-import com.kdn.presentation.databinding.FragmentChooseTreeBinding
 import com.kdn.presentation.databinding.FragmentMainFunBinding
-import com.kdn.presentation.ui.setting.viewmodel.MainViewmodel
+import com.kdn.presentation.ui.main.viewmodel.MainViewmodel
+import com.kdn.presentation.ui.setting.toast.ToastView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,9 +32,22 @@ class MainFunFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_fun,container,false)
 
+        binding.fragment = this
+
+        binding.viewmodel = viewModel
+
         updateSetting()
 
         return binding.root
+    }
+
+    fun outPutOnClick(v : View){
+        findNavController().navigate(R.id.action_mainFunFragment_to_setTimeAndOutputFragment)
+    }
+
+    fun waterOutPut(v : View){
+        ToastView.createToast(requireContext(), "성공적으로 방출 되었습니다!")?.show()
+        viewModel.setWaterSetting()
     }
 
     fun updateSetting(){
@@ -45,7 +58,9 @@ class MainFunFragment : Fragment() {
                     val data : SaveDataClass? = snapshot.getValue(SaveDataClass::class.java)
 
                         binding.values =SaveDataClass(
-                            data!!.Ieast_temperature
+                            data!!.size
+                            ,data!!.tree
+                            ,data!!.Ieast_temperature
                             ,data!!.alarm_o_clock
                             ,data!!.alram_minutes
                             ,data!!.battery
@@ -55,8 +70,6 @@ class MainFunFragment : Fragment() {
                             ,data!!.maximum_temperature
                             ,data!!.output
                             ,data!!.output_time
-                            ,data!!.size
-                            ,data!!.tree
                             ,data!!.volume
                         )
                 }
@@ -68,7 +81,9 @@ class MainFunFragment : Fragment() {
                     Log.d("change!",data.toString())
 
                     binding.values =SaveDataClass(
-                        data!!.Ieast_temperature
+                        data!!.size
+                        ,data!!.tree
+                        ,data!!.Ieast_temperature
                         ,data!!.alarm_o_clock
                         ,data!!.alram_minutes
                         ,data!!.battery
@@ -78,8 +93,6 @@ class MainFunFragment : Fragment() {
                         ,data!!.maximum_temperature
                         ,data!!.output
                         ,data!!.output_time
-                        ,data!!.size
-                        ,data!!.tree
                         ,data!!.volume
                     )
 
