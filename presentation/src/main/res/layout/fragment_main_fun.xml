@@ -8,6 +8,14 @@
     <data>
 
         <variable
+            name="viewmodel"
+            type="com.kdn.presentation.ui.main.viewmodel.MainViewmodel" />
+
+        <variable
+            name="fragment"
+            type="com.kdn.presentation.ui.main.fragment.MainFunFragment" />
+
+        <variable
             name="values"
             type="com.kdn.presentation.SaveDataClass" />
 
@@ -192,7 +200,7 @@
                 android:id="@+id/Volume_image"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:src="@drawable/waterfull"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -200,6 +208,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:id="@+id/Volume_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -228,6 +237,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
+                android:layout_marginLeft="5dp"
                 android:id="@+id/battery_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -235,11 +245,11 @@
                 android:text="@{values.battery}"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/battery_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.928"
                 app:layout_constraintStart_toEndOf="@+id/battery_image"
-                app:layout_constraintTop_toBottomOf="@+id/Volume_textview"
+                app:layout_constraintTop_toTopOf="@+id/battery_image"
                 app:layout_constraintVertical_bias="0.466" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -261,7 +271,7 @@
                 android:id="@+id/temperature_image"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:src="@drawable/temperature"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -272,7 +282,7 @@
                 android:id="@+id/temperature_max_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/title_light"
                 android:text="@{values.ieast_temperature}"
                 android:textColor="@color/black"
@@ -375,6 +385,7 @@
             android:background="@drawable/mainback"
             android:elevation="20dp"
             android:padding="20dp"
+            android:onClick="@{fragment.outPutOnClick}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent"
@@ -545,6 +556,7 @@
             android:background="@drawable/mainback"
             android:elevation="20dp"
             android:padding="20dp"
+            android:onClick="@{fragment.waterOutPut}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.177"

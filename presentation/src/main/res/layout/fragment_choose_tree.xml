@@ -14,6 +14,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="ui.setting.fragment.ChooseTreeFragment">
@@ -146,6 +147,7 @@
                     android:onClick="@{fragment.isButtonTrue}"
                     android:id="@+id/cypress_textView"
                     android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/radio_is_check"
                     android:button="@null"
@@ -158,6 +160,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/zelkova_textView" />
 
                 <RadioButton
+                    android:layout_marginTop="10dp"
                     android:onClick="@{fragment.isButtonTrue}"
                     android:id="@+id/oak_textView"
                     android:layout_width="wrap_content"
@@ -175,6 +178,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/pine_textView" />
 
                 <RadioButton
+                    android:layout_marginTop="10dp"
                     android:onClick="@{fragment.isButtonTrue}"
                     android:id="@+id/etc_textview"
                     android:layout_width="wrap_content"

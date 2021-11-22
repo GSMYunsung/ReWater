@@ -3,6 +3,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.kdn.presentation.ui.main.fragment.SetTimeAndOutputFragment" />
+
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -77,13 +86,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
             <TextView
-                android:textSize="15dp"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/title_light"
                 android:text="방류량을 땅보다 1~2cm 밑 까지 \n 젖을 수 있는 정도가 딱 좋아요"
                 android:textColor="@color/black"
+                android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
@@ -105,7 +115,7 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/water_editText"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -121,8 +131,8 @@
             android:text="ML"
             android:textColor="@color/black"
             android:textSize="40dp"
-            app:layout_constraintStart_toEndOf="@+id/editText2"
-            app:layout_constraintTop_toTopOf="@+id/editText2" />
+            app:layout_constraintStart_toEndOf="@+id/water_editText"
+            app:layout_constraintTop_toTopOf="@+id/water_editText" />
 
         <TextView
             android:layout_marginTop="30dp"
@@ -135,10 +145,10 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/water_editText" />
 
         <EditText
-            android:id="@+id/editText9"
+            android:id="@+id/time_edittext"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -154,13 +164,14 @@
             android:text="시간"
             android:textColor="@color/black"
             android:textSize="40dp"
-            app:layout_constraintStart_toEndOf="@+id/editText9"
-            app:layout_constraintTop_toTopOf="@+id/editText9" />
+            app:layout_constraintStart_toEndOf="@+id/time_edittext"
+            app:layout_constraintTop_toTopOf="@+id/time_edittext" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="60dp"
+            android:onClick="@{fragment.onclickSaveData}"
             android:background="@drawable/next_button_background"
             android:layout_marginBottom="48dp"
             android:text="완료"

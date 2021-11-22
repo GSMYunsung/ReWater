@@ -34,5 +34,9 @@
         android:id="@+id/setTimeAndOutputFragment"
         android:name="com.kdn.presentation.ui.main.fragment.SetTimeAndOutputFragment"
         android:label="fragment_set_time_and_output"
-        tools:layout="@layout/fragment_set_time_and_output" />
+        tools:layout="@layout/fragment_set_time_and_output" >
+        <action
+            android:id="@+id/action_setTimeAndOutputFragment_to_mainFunFragment"
+            app:destination="@id/mainFunFragment" />
+    </fragment>
 </navigation>
